@@ -1,2 +1,2 @@
-[]Membuat Login dengan Shield
-[]Membuat TodoList Sederhana
+1. Membuat Login dengan Shield
+2. Membuat TodoList Sederhana
