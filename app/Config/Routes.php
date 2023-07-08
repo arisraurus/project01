@@ -31,6 +31,10 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::main');
 $routes->get('main', 'Home::main');
+$routes->get('todo', 'TodoLists::index');
+$routes->post('todo/input', 'TodoLists::input');
+$routes->post('todo/update', 'TodoLists::updateList');
+$routes->get('todo/delete/(:any)', 'TodoLists::delete/$1');
 
 service('auth')->routes($routes);
 

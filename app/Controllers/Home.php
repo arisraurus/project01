@@ -21,4 +21,8 @@ class Home extends BaseController
         ];
         return view('main', $data);
     }
+    public function todo()
+    {
+        return view('index');
+    }
 }
