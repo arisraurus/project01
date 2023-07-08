@@ -16,6 +16,8 @@
         <div class="card card border-info mb-3">
             <div class="card-header">
                 <h4>Welcome to my Website</h4>
+                <h4>Timeout :<?= $login_timeout; ?></h4>
+                <h4>Username :<?= $username; ?></h4>
             </div>
             <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
             <div class="card-body">
