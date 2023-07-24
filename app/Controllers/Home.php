@@ -21,6 +21,13 @@ class Home extends BaseController
         ];
         return view('main', $data);
     }
+    public function selectize()
+    {
+        $data = [
+            'title' => 'Demo Selectize',
+        ];
+        return view('selectize', $data);
+    }
     public function todo()
     {
         return view('index');

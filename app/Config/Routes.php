@@ -31,10 +31,23 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::main');
 $routes->get('main', 'Home::main');
+$routes->get('selectize', 'Home::selectize');
 $routes->get('todo', 'TodoLists::index');
 $routes->post('todo/input', 'TodoLists::input');
 $routes->post('todo/update', 'TodoLists::updateList');
 $routes->get('todo/delete/(:any)', 'TodoLists::delete/$1');
+$routes->get('todo/json', 'TodoLists::json');
+
+$routes->resource('api/post', ['controller' => 'Post']);
+// Dengan kode di atas sama dengan kita membuat route yang ada di bawah ini.
+// $routes->get('api/post/new',             'Post::new');
+// $routes->post('api/post',                'Post::create');
+// $routes->get('api/post',                 'Post::index');
+// $routes->get('api/post/(:segment)',      'Post::show/$1');
+// $routes->get('api/post/(:segment)/edit', 'Post::edit/$1');
+// $routes->put('api/post/(:segment)',      'Post::update/$1');
+// $routes->patch('api/post/(:segment)',    'Post::update/$1');
+// $routes->delete('api/post/(:segment)',   'Post::delete/$1');
 
 service('auth')->routes($routes);
 

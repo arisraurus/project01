@@ -41,7 +41,7 @@
             <div class="col-md-5 mt-2">
                 <form action="<?= base_url('todo/input'); ?>" method="post" class="row">
                     <div class="form-group col-md-9">
-                        <input class="form-control" type="text" name="input" id="input" placeholder="input todo">
+                        <input class="form-control" type="text" name="input" id="input" placeholder="input todo" required>
                     </div>
                     <div class="form-group col-md  d-grid gap-2">
                         <button type="submit" class="btn btn-primary btn-block">Add</button>
@@ -56,6 +56,7 @@
                     <?php
                     if (!$todolist)
                         echo "List masih kosong!";
+                    $ar_id = [];
                     foreach ($todolist as $val) {
                         $el_name = "list-" . $val['id'];
                         $ar_id[] = $val['id'];
@@ -66,7 +67,7 @@
                                 <label for="<?= $el_name; ?>"><?= $val['judul']; ?></label>
                             </div>
                             <div class="col-md">
-                                <a href="<?= base_url('todo/delete/') . $val['id']; ?>" class="btn btn-danger btn-sm float-end">Delete</a>
+                                <a href="<?= base_url('todo/delete/') . $val['id']; ?>" onclick="confirm('Hapus?')==false?event.preventDefault():''" class="btn btn-danger btn-sm float-end">Delete</a>
                             </div>
                         </li>
                     <?php

@@ -51,4 +51,9 @@ class TodoLists extends BaseController
         $this->model->delete($id);
         return redirect()->to('todo');
     }
+    function json()
+    {
+        $data['json'] = $this->model->getList();
+        return $this->response->setJSON($data);
+    }
 }
